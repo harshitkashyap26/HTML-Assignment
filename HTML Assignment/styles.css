@@ -265,6 +265,7 @@ input[type=number] {
 .dropdown {
   position: relative;
   display: block;
+  transition: 0.5s;
 }
 .dropdown-content {
   display: none;
@@ -275,6 +276,7 @@ input[type=number] {
   max-height: 65px;
   border-radius: 10px;
   z-index: 1;
+  transition: 0.5s;
 }
 .dropdown-content img
 {
@@ -286,12 +288,12 @@ input[type=number] {
   background-image: linear-gradient(lemonchiffon 60%, orange 40%);
   background-size: cover;
   border-radius: 10px;
+  transition: 0.5s;
 }
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn
 {
     border-bottom: 1px solid lemonchiffon;
-    transition: 0.5s;
     background-color: black;
     color: lemonchiffon;
 }
