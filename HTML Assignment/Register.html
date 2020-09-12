@@ -19,6 +19,14 @@
           <div class="nav-link-wrapper">
             <a href="About.html">About Us</a>
           </div>
+          <div class="dropdown">
+            <button class="dropbtn">Contact Us</button>
+            <div class="dropdown-content">
+              <a href="https://www.facebook.com/harshit.kashyap.568">Facebook</a>
+              <a href="https://www.linkedin.com/in/harshit-kashyap-637894191/">LinkedIn</a>
+              <a href="https://github.com/harshitkashyap26">Github</a>
+            </div>
+          </div>
         </div>
         <div class="right-side">
           <div class="brand">
@@ -29,18 +37,9 @@
       <div class="content-wrapper">
         <div class="form">
           <div class="form-box">
-            <div class="button-box">
-              <div id="btn"></div>
-              <button type="button" class="toggle-btn">Registeration Form</button>
+              <div class="heading">
+              <h1>Registeration Form</h1>
               </div>
-              <form id="register" class = "input-group">
-                <input type="text" class="input-field" placeholder="Name" required>
-                <input type="text" class="input-field" placeholder="Roll Number" required>
-                <input type="text" class="input-field" placeholder="Email" required>
-                <input type="text" class="input-field" placeholder="Mobile Number" required>
-                <input type="text" class="input-field" placeholder="Address" required>
-                <button type="submit" class="submit-btn">Register</button>
-              </form>
               <div class="social-icons">
                 <div> Contact Us:  </div>
                 <p></p>
@@ -48,10 +47,71 @@
                 <a href="https://www.linkedin.com/in/harshit-kashyap-637894191/"><img src="Pictures/LinkedIn.png"></a>
                 <a href="https://github.com/harshitkashyap26"><img src="Pictures/Github.png"></a>
               </div>
-            </div>
+              <form class = "input-group" name="registration" onSubmit="return formvalid();">
+                <input type="text" class="input-field" name="name" placeholder="Name" required>
+                <input type="text" class="input-field" name="rollno" placeholder="Roll Number" required>
+                <input type="text" class="input-field" placeholder="Email" required>
+                <input type="number" class="input-field" name="mobno" placeholder="Mobile Number" required>
+                <input type="text" class="input-field" placeholder="Address" required>
+                <button type="submit" class="submit-btn">Register</button>
+              </form>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      function formvalid()
+      {
+      var nam = document.registration.name;
+      var roll = document.registration.rollno;
+      var mob = document.registration.mobno;
+      if(allletters(nam))
+      {
+        if(validroll(roll))
+        {
+          if(tendigits(mob))
+          {
+          }
+        }
+      }
+      return false;
+    }
+    function allletters(nam)
+    {
+      var letters = /^[A-Za-z &nbsp]+$/;
+      if(nam.value.match(letters))
+      {
+        return true;
+      }
+      else
+      {
+        alert('Name must have alphabet characters only');
+        nam.focus();
+        return false;
+      }
+    }
+    function validroll(roll)
+    {
+      var roll_len = roll.value.length;
+      if (roll_len != 9 && roll_len != 8)
+      {
+        alert("Not a valid IITB Roll Number");
+        roll.focus();
+        return false;
+      }
+      return true;
+    }
+    function tendigits(mob)
+    {
+      var mob_len = mob.value.length;
+      if (mob_len != 10)
+      {
+        alert("Mobile Number must be of 10 Digits");
+        mob.focus();
+        return false;
+      }
+      return true;
+    }
+    </script>
   </body>
 </html>
